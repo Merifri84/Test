@@ -1,0 +1,24 @@
+package org.selenide.examples;
+
+import com.codeborne.selenide.Configuration;
+import com.codeborne.selenide.Selenide;
+import org.junit.Test;
+import org.openqa.selenium.By;
+
+import static com.codeborne.selenide.Selenide.$;
+
+/**
+ * Created by Winter on 12.07.2017.
+ */
+public class iThanksTest {
+
+    @Test
+    public void userCanOpeniThanks() {
+        Configuration.browser = "chrome";
+        Selenide.open ( "https://button.ithanks.com/" );
+        $(".ithanks-button").click();
+        $(".login-email").setValue("Sbel_2@mailinator.com");
+        $(".login-password").setValue ( "QWEqwe123" );
+        $(".btn-login").click ();
+    }
+}
